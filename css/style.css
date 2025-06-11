@@ -1,0 +1,15 @@
+#info-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.info-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 180px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  background-color: #fdfdfd;
+}
