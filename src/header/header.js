@@ -1,5 +1,3 @@
-import heroImage from "../assets/investing.jpg";
-
 export function header() {
   document.querySelector("header").innerHTML = `
     <div class="header-container">
@@ -18,7 +16,7 @@ export function header() {
         </nav>
       </div>
       <div class="hero">
-        <img src="../assets/investing.jpg" alt="Investment Hero Image">
+        <img src="./assets/investing.jpg" alt="Investment Hero Image">
         <div class="hero-text">
           <h2>Track your stocks & crypto in real-time</h2>
         </div>
