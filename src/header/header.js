@@ -1,4 +1,4 @@
-let heroImage = "../assets/investing.jpg";
+let heroImage = "./assets/investing.jpg";
 
 export function header() {
   document.querySelector("header").innerHTML = `
@@ -25,7 +25,8 @@ export function header() {
       </div>
     </div>
   `;
-console.log(heroImage);
+
+  
   document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
