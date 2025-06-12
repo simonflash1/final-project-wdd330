@@ -4,5 +4,6 @@ import { footer } from "./footer/footer.js";
 
 
 header();
-sections();
+// sections();
 footer();
+window.onload = sections();
