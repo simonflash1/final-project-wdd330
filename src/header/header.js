@@ -1,5 +1,6 @@
 let heroImage = "./assets/investing.jpg";
 
+
 export function header() {
   document.querySelector("header").innerHTML = `
     <div class="header-container">
