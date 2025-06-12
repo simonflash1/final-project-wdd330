@@ -18,7 +18,7 @@ export function header() {
         </nav>
       </div>
       <div class="hero">
-        <img src="${heroImage}" alt="Investment Hero Image">
+        <img src="../assets/investing.jpg" alt="Investment Hero Image">
         <div class="hero-text">
           <h2>Track your stocks & crypto in real-time</h2>
         </div>
