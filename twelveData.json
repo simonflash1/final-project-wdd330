@@ -1,0 +1,32 @@
+{
+  "AAPL": {
+    "symbol": "AAPL",
+    "price": "185.73",
+    "volume": "56230418",
+    "timestamp": "2025-06-15 16:00:00"
+  },
+  "MSFT": {
+    "symbol": "MSFT",
+    "price": "343.15",
+    "volume": "27604562",
+    "timestamp": "2025-06-15 16:00:00"
+  },
+  "GOOGL": {
+    "symbol": "GOOGL",
+    "price": "134.12",
+    "volume": "18920348",
+    "timestamp": "2025-06-15 16:00:00"
+  },
+  "AMZN": {
+    "symbol": "AMZN",
+    "price": "126.99",
+    "volume": "23450494",
+    "timestamp": "2025-06-15 16:00:00"
+  },
+  "META": {
+    "symbol": "META",
+    "price": "286.01",
+    "volume": "14900823",
+    "timestamp": "2025-06-15 16:00:00"
+  }
+}

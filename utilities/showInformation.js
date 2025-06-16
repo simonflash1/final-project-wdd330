@@ -4,11 +4,19 @@ export function showInformation(binanceData = [], twelveData = []) {
 
   const stockSection = document.createElement("section");
   stockSection.id = "stock-section";
+  stockSection.className = "info-section";
   stockSection.innerHTML = `<h2>Stock Market</h2>`;
+
+  const stockContainer = document.createElement("div");
+  stockContainer.className = "info-card-container";
 
   const cryptoSection = document.createElement("section");
   cryptoSection.id = "crypto-section";
+  cryptoSection.className = "info-section";
   cryptoSection.innerHTML = `<h2>Crypto Market</h2>`;
+
+  const cryptoContainer = document.createElement("div");
+  cryptoContainer.className = "info-card-container";
 
   function createCard(ticker, price, source) {
     const card = document.createElement("div");
@@ -23,13 +31,16 @@ export function showInformation(binanceData = [], twelveData = []) {
 
   twelveData.forEach(({ symbol, price, source }) => {
     const card = createCard(symbol, price, source);
-    stockSection.appendChild(card);
+    stockContainer.appendChild(card);
   });
 
   binanceData.forEach(({ symbol, price, source }) => {
     const card = createCard(symbol, price, source);
-    cryptoSection.appendChild(card);
+    cryptoContainer.appendChild(card);
   });
+
+  stockSection.appendChild(stockContainer);
+  cryptoSection.appendChild(cryptoContainer);
 
   container.appendChild(stockSection);
   container.appendChild(cryptoSection);

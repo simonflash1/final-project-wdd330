@@ -1,21 +1,24 @@
 let heroImage = "./assets/investing.jpg";
- 
+
 export function header() {
   document.querySelector("header").innerHTML = `
     <div class="header-container">
       <div class="top-bar">
         <div class="logo">Assets Tracker</div>
         <nav class="navigation">
-          <button class="hamburger" aria-label="Toggle menu">
-            ☰
-          </button>
           <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Products</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact</a></li>
-          </ul>
+            </ul>
         </nav>
+        <div class="controls">
+          <button id="theme-toggle">
+            <span id="theme-icon">🌙</span>
+          </button>
+          <button class="hamburger">☰</button>
+          </div>
       </div>
       <div class="hero">
         <img src="${heroImage}" alt="Investment Hero Image">
@@ -30,7 +33,17 @@ export function header() {
     const navLinks = document.querySelector(".nav-links");
     hamburger.addEventListener("click", () => {
       navLinks.classList.toggle("active");
-      console.log("hamburger clicked");
+      //console.log("hamburger clicked");
     });
+  });
+
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+  const body = document.body;
+
+  themeToggle.addEventListener("click", () => {
+    const isDarkMode = body.classList.toggle("dark-mode");
+    themeIcon.textContent = isDarkMode ? "☀️" : "🌙";
+    //console.log("Dark mode:", isDarkMode ? "Enabled" : "Disabled");
   });
 }
