@@ -6,4 +6,7 @@ import { footer } from "./footer/footer.js";
 header();
 // sections();
 footer();
-window.onload = sections();
+window.onload = () => {
+  sections();
+  setInterval(sections, 60_000);
+};

@@ -14,21 +14,39 @@ export async function callApiBinance() {
   }
 }
 
-export const fetchPrices = async () => {
-  try {
-    const response = await fetch(
-      'https://api.twelvedata.com/price?symbol=AAPL,GOOG,MSFT,EUR/USD,USD/JPY&apikey=bdd846cec5344368ac013b7646cb9d94'
-    );
+export async function fetchPrices() {
+  const cache = localStorage.getItem("twelveDataCache");
+  const now = Date.now();
 
-    if (!response.ok) {
-      throw new Error(`Twelve Data API error: ${response.status} ${response.statusText}`);
+  if (cache) {
+    const { timestamp, data } = JSON.parse(cache);
+    if (now - timestamp < 60_000) {
+      console.log("Cache data");
+      return data;
     }
+  }
+
+  try {
+    const response = await fetch('https://api.twelvedata.com/price?symbol=AAPL,GOOG,MSFT,EUR/USD,USD/JPY&apikey=bdd846cec5344368ac013b7646cb9d94');
+    if (!response.ok) throw new Error("Error in TwelveData API call");
 
     const data = await response.json();
-    console.log("Twelve Data:", data);
+
+    localStorage.setItem(
+      "twelveDataCache",
+      JSON.stringify({ timestamp: now, data })
+    );
+
     return data;
   } catch (error) {
-    console.error("Error fetching Twelve Data prices:", error);
-  }
-};
+    console.error("Error with TwelveData:", error);
 
+    if (cache) {
+      const { data } = JSON.parse(cache);
+      console.log("old data by error");
+      return data;
+    }
+
+    return {};
+  }
+}
