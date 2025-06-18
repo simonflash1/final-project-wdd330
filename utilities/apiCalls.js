@@ -27,7 +27,7 @@ export async function fetchPrices() {
   }
 
   try {
-    const response = await fetch("./twelveData.json"/*'https://api.twelvedata.com/price?symbol=AAPL,GOOG,MSFT,EUR/USD,USD/JPY&apikey=bdd846cec5344368ac013b7646cb9d94'*/);
+    const response = await fetch('https://api.twelvedata.com/price?symbol=AAPL,GOOG,MSFT,EUR/USD,USD/JPY&apikey=bdd846cec5344368ac013b7646cb9d94');
     if (!response.ok) throw new Error("Error in TwelveData API call");
 
     const data = await response.json();
